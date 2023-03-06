@@ -64,8 +64,19 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-caption">Effective Solutions <br>for Your Business</h1>
-          <button type="button" class="hero-btn btn-padding">Order Service</button>
+          <button type="button" class="hero-btn btn-padding" data-modal-open>Order Service</button>
         </div>
+
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button type="button" class="modal-button" data-modal-close>
+              <svg width="8" height="8">
+                <use href="./images/svgicon.svg#close.svg"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
       </section>
 
       <!--Feature-->
