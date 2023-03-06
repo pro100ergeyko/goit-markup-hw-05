@@ -259,7 +259,7 @@ body {
   
   .modal-button {
     display: flex;
-    color: var(--modal-batton-color);
+    fill: var(--modal-batton-color);
     width: 24px;
     height: 24px;
     align-items: center;
