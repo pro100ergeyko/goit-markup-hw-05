@@ -98,13 +98,9 @@ body {
 }
 
 /*Link for other pages*/
-.site-nav-items{
-    position: relative;
-}
-
-
 .site-nav-link {
-    display: inline-block;
+    position: relative;
+    display: block;
     padding-top: 24px;
     padding-bottom: 23px;
     font-weight: 500;
@@ -115,13 +111,16 @@ body {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav-border::before {
+.site-nav-link.current {
+    color: var(--link-color);
+}
+
+.current::before {
     content: '';
     position: absolute;
     bottom: -1px;
     left: 0;
 
-    display: inline-flex;
     margin: 0;
     padding: 0;
 
@@ -241,7 +240,6 @@ body {
   
   .modal {
     position: absolute;
-    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -253,11 +251,14 @@ body {
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     justify-content: flex-end;
-    padding: 24px;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .modal-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
     display: flex;
     fill: var(--modal-batton-color);
     width: 24px;
@@ -271,6 +272,11 @@ body {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-button:is(:hover, :focus) {
+    fill: var(--primery-background-color);
+    background-color: var(--link-color-hover);
   }
 
 /* Hidden caption */
@@ -545,7 +551,7 @@ body {
 }
 
 .overlay-title {
-    padding: 40px 32px 164px 32px;
+    padding: 40px 32px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
